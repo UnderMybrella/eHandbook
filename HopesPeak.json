@@ -1,0 +1,110 @@
+{
+	"sections":{
+		"Dormitory 1st Floor":{
+			"locations":{
+				"Hallway 1F":{
+					"exits":[
+						"Dining Hall", "Kitchen", "Warehouse",
+						"Kyoko's Room", "Makoto's Room", "Sayaka's Room",
+						"Toko's Room", "Chihiro's Room", "Aoi's Room",
+						"Sakura's Room", "Leon's Room", "Yasuhiro's Room",
+						"Hifumi's Room", "Kiyotaka's Room", "Mondo's Room",
+						"Byakuya's Room", "Junko's Room", "Celeste's Room",
+						"Trash Room", "Boy's Bathroom", "Girl's Bathroom",
+						"Laundry", "Dressing Room", "Bathhouse", "Sauna",
+						
+						"Hope's Peak 1st Floor"
+					]
+				},
+				"Dining Hall":{
+					"exits":["Kitchen", "Hallway 1F"]
+				},
+				"Kitchen":{
+					"exits":["Dining Hall"]
+				},
+				"Warehouse":{
+					"unlocked":"CHAPTER_2",
+					"exits":["Hallway 1F"]
+				},
+				"Kyoko's Room":{
+					"exits":["Hallway 1F"]		
+				},
+				"Makoto's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Sayaka's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Toko's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Chihiro's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Aoi's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Sakura's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Leon's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Yasuhiro's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Hifumi's Room":{
+					"exits":["Hallway 1F"]				
+				},
+				"Trash Room":{
+					"exits":["Hallway 1F"]	
+				},
+				"Boy's Bathroom":{
+					"exits":["Hallway 1F"]	
+				},
+				"Girl's Bathroom":{
+					"exits":["Hallway 1F"]	
+				},
+				"Laundry":{
+					"exits":["Hallway 1F"]	
+				},
+				"Dressing Room":{
+					"unlocked":"CHAPTER_2",
+					"exits":["Hallway 1F", "Bathhouse"]
+				},
+				"Bathhouse":{
+					"unlocked":"CHAPTER_2",
+					"exits":["Dressing Room", "Sauna"]
+				},
+				"Sauna":{
+					"unlocked":"CHAPTER_2",
+					"exits":["Bathhouse"]
+				},
+				"Kiyotaka's Room":{
+					"exits":"Hallway 1F"				
+				},
+				"Mondo's Room":{
+					"exits":"Hallway 1F"				
+				},
+				"Byakuya's Room":{
+					"exits":"Hallway 1F"				
+				},
+				"Junko's Room":{
+					"exits":"Hallway 1F"				
+				},
+				"Celeste's Room":{
+					"exits":"Hallway 1F"				
+				}
+			}
+		},
+		"Hope's Peak 1st Floor":{
+			"locations":{
+				"Hallway 1F":{
+					"exits":[
+						"Dormitory 1st Floor:Hallway 1F"
+					]
+				}
+			}
+		}
+	}
+}
