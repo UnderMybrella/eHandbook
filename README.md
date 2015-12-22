@@ -17,3 +17,6 @@ under the WTFPL license (Basically, do whatever you want with it). Note however,
 both the gson and Lanterna libraries are required to make this work, which can be found here:
 https://github.com/google/gson
 https://github.com/mabe02/lanterna
+
+In addition, my primarily library Omnis is required, which can be found here:
+https://github.com/UnderMybrella/Omnis
