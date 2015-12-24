@@ -10,6 +10,7 @@ import org.abimon.omnis.io.VirtualPrintStream;
 import org.abimon.omnis.lanterna.ScrollPanel;
 import org.abimon.omnis.lanterna.ScrollWindow;
 import org.abimon.omnis.ludus.Ludus;
+import org.abimon.omnis.net.Website;
 import org.abimon.omnis.util.EnumOS;
 
 import com.google.gson.GsonBuilder;
@@ -48,6 +49,12 @@ public class eHandbook {
 		try{
 			if(!eHandbookLocation.exists())
 				eHandbookLocation.mkdir();
+			File mapsFile = new File(eHandbookLocation, "maps");
+			File evidenceFile = new File(eHandbookLocation, "evidence");
+			if(!mapsFile.exists())
+				mapsFile.mkdir();
+			if(!evidenceFile.exists())
+				evidenceFile.mkdir();
 			Ludus.registerDataPool(new ClassLoaderDataPool(this.getClass()));
 			Ludus.registerDataPool(new File("resources"));
 			Ludus.registerDataPool(eHandbookLocation);
@@ -73,6 +80,7 @@ public class eHandbook {
 			panel.setLayoutManager(new GridLayout(1));
 
 			panel.addComponent(new Label("Welcome " + System.getProperty("user.name")));
+			panel.addComponent(new Label("Running " + EnumOS.determineOS()));
 			panel.addComponent(new Button("Go to eHandbook", new Runnable(){
 				public void run(){
 					menu();
@@ -317,6 +325,36 @@ public class eHandbook {
 				public void run(){
 					FileDialog jfc = new FileDialog("Evidence", "Choose a .json evidence file to load", "Load", panel.getSize(), false, new File(System.getProperty("user.home")));
 					loadEvidence(jfc.showDialog(gui));
+				}
+			}));
+			
+			panel.addComponent(new Button("...from a url", new Runnable(){
+				public void run(){
+					Panel urlPanel = new Panel();
+					urlPanel.setLayoutManager(new GridLayout(2));
+					
+					final TextBox url = new TextBox(new TerminalSize(30, 1));
+					
+					urlPanel.addComponent(new Label("URL: "));
+					urlPanel.addComponent(url);
+					urlPanel.addComponent(new Button("Back", BACK_BUTTON));
+					urlPanel.addComponent(new Button("Download & Add", new Runnable(){
+						public void run(){
+							try{
+								Website website = new Website(url.getText());
+								File fileLoc = new File(new File(eHandbookLocation, "evidence"), url.getText().split("/")[url.getText().split("/").length - 1]);
+								if(!fileLoc.exists())
+									fileLoc.createNewFile();
+								new Data(website.retrieveContent()).write(fileLoc);
+								BACK_BUTTON.run();
+							}
+							catch(Throwable th){}
+						}
+					}));
+					
+					Window window = new BasicWindow();
+					window.setComponent(urlPanel);
+					gui.addWindowAndWait(window);
 				}
 			}));
 
