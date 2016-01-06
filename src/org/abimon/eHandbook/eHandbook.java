@@ -233,7 +233,7 @@ public class eHandbook {
 					panel.addComponent(new Label(truthBullet.get("discovered_time").getAsString()));
 
 					panel.addComponent(new Label("Where it was discovered: "));
-					panel.addComponent(new Label(truthBullet.get("discovered_location").getAsString().split(":")[1]));
+					panel.addComponent(new Label(truthBullet.get("discovered_location").getAsString().split(":")[truthBullet.get("discovered_location").getAsString().split(":").length-1]));
 
 					panel.addComponent(new Label("Who discovered it: "));
 					panel.addComponent(new Label(truthBullet.get("discovered_person").getAsString()));
@@ -436,7 +436,7 @@ public class eHandbook {
 			Panel panel = new ScrollPanel(10);
 			panel.setLayoutManager(new GridLayout(1));
 
-			if(room.equals("")){
+			if(room.equals("") && map != null && map.has("sections")){
 				for(final Entry<String, JsonElement> element : map.get("sections").getAsJsonObject().entrySet()){
 					panel.addComponent(new Button(element.getKey(), new Runnable(){
 						public void run(){
@@ -445,7 +445,7 @@ public class eHandbook {
 					}));
 				}
 			}
-			else if(room.indexOf(':') == -1){
+			else if(room.indexOf(':') == -1 && map != null && map.has("sections")){
 				for(final Entry<String, JsonElement> element : map.get("sections").getAsJsonObject().get(room).getAsJsonObject().get("locations").getAsJsonObject().entrySet()){
 					panel.addComponent(new Button(element.getKey(), new Runnable(){
 						public void run(){
@@ -454,7 +454,7 @@ public class eHandbook {
 					}));
 				}
 			}
-			else {
+			else if(map != null && loadedEvidence != null && loadedEvidence.has("evidence")){
 				for(final Entry<String, JsonElement> element : loadedEvidence.get("evidence").getAsJsonObject().entrySet()){
 					try{
 						if(element.getValue().getAsJsonObject().get("discovered_location").getAsString().replaceAll("\\s+", "").equalsIgnoreCase(room.replaceAll("\\s+", "")))
@@ -495,6 +495,7 @@ public class eHandbook {
 			error.setForegroundColor(TextColor.ANSI.RED);
 			panel.addComponent(unexpected);
 			panel.addComponent(error);
+			panel.setPreferredSize(error.getPreferredSize());//new TerminalSize(vps.getContents().getAsString().vps.getContents().getAsString().split("\n").length)));
 
 			Window window = new BasicWindow();
 			window.setComponent(panel);
