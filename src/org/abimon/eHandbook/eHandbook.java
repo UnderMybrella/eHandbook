@@ -226,7 +226,6 @@ public class eHandbook {
 
 				panel.setLayoutManager(new GridLayout(2));
 				try{
-					System.out.println(loadedEvidence);
 					JsonObject truthBullet = loadedEvidence.get("evidence").getAsJsonObject().get(bullet).getAsJsonObject();
 
 					panel.addComponent(new Label("When it was discovered: "));
@@ -400,6 +399,7 @@ public class eHandbook {
 			if(data != null)
 				loadedEvidence = new JsonParser().parse(data.getAsString().trim()).getAsJsonObject();
 			loadedFile = file;
+			BACK_BUTTON.run();
 			BACK_BUTTON.run();
 		}
 		catch(Throwable th){

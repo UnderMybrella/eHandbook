@@ -104,7 +104,22 @@
 					"exits":[
 						"Dormitory 1st Floor:Hallway 1F"
 					]
-				}
+				},
+				"Girls Bathroom":{},
+				"Boys Bathroom":{},
+				"Nurse's Office":{},
+				"Main Hall":{},
+				"School Store":{},
+				"A/V Room":{},
+				"Class 1-A":{},
+				"Class 1-B":{},
+				
+			}
+		},
+		"Gym 1st Floor":{
+			"locations":{
+				"Gym Entryway":{},
+				"Gym":{}
 			}
 		}
 	}
