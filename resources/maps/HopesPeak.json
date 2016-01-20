@@ -120,6 +120,56 @@
 				"Gym Entryway":{},
 				"Gym":{}
 			}
+		},
+		"Hope's Peak 2nd Floor":{
+			"locations":{
+				"Hallway 2F":{},
+				"Library":{},
+				"Archives":{},
+				"Class 2-A":{},
+				"Class 2-B":{},
+				"Boy's Bathroom":{},
+				"Girl's Bathroom":{},
+				"Boy's Changing Room":{},
+				"Girl's Changing Room":{},
+				"Pool":{},
+				"Secret Room":{}
+			}
+		},
+		"Hope's Peak 3rd Floor":{
+			"locations":{
+				"Class 3-A":{},
+				"Class 3-B":{},
+				"Recreational Room":{},
+				"Art Room":{},
+				"Art Storage Room":{},
+				"Physics Lab":{},
+				"Physics Storage Room":{}
+			}
+		},
+		"Hope's Peak 4th Floor":{
+			"locations":{
+				"Boy's Bathroom":{},
+				"Girl's Bathroom":{},
+				"Music Room":{},
+				"Principal's Office":{},
+				"Staff Room":{},
+				"Data Processing Room":{},
+				"Monokuma Control Panel":{},
+				"Class 4-A":{},
+				"Class 4-B":{},
+				"Chemistry Lab":{}
+			}
+		},
+		"Hope's Peak 5th Floor":{
+			"locations":{
+				"Biology Lab":{},
+				"Class 5-A":{},
+				"Class 5-B":{},
+				"Class 5-C":{},
+				"Dojo":{},
+				"Greenhouse":{}
+			}
 		}
 	}
 }
