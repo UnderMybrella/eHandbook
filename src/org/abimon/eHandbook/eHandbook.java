@@ -1,6 +1,8 @@
 package org.abimon.eHandbook;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Map.Entry;
 
@@ -11,6 +13,7 @@ import org.abimon.omnis.lanterna.ScrollPanel;
 import org.abimon.omnis.lanterna.ScrollWindow;
 import org.abimon.omnis.ludus.Ludus;
 import org.abimon.omnis.net.Website;
+import org.abimon.omnis.reflect.ReflectionHelper;
 import org.abimon.omnis.util.EnumOS;
 
 import com.google.gson.GsonBuilder;
@@ -57,6 +60,35 @@ public class eHandbook {
 				evidenceFile.mkdir();
 			Ludus.registerDataPool(new ClassLoaderDataPool(this.getClass()));
 			Ludus.registerDataPool(new File("resources"));
+
+			for(String fileName : Ludus.getAllDataNames(".*maps/.*\\.json")){
+				try{
+					File remoteFile = new File(eHandbookLocation, fileName.replace("/", File.separator));
+					if(remoteFile.exists())
+						continue;
+					remoteFile.createNewFile();
+					Ludus.getData(fileName).write(remoteFile);
+				}
+				catch(Throwable th){
+					th.printStackTrace();
+				}
+			}			
+
+			for(String fileName : Ludus.getAllDataNames(".*evidence/.*\\.json")){
+				try{
+					File remoteFile = new File(eHandbookLocation, fileName.replace("/", File.separator));
+					if(remoteFile.exists())
+						continue;
+					remoteFile.createNewFile();
+					Ludus.getData(fileName).write(remoteFile);
+				}
+				catch(Throwable th){
+					th.printStackTrace();
+				}
+			}
+
+			Ludus.clearDataPools();
+
 			Ludus.registerDataPool(eHandbookLocation);
 
 			Runtime.getRuntime().addShutdownHook(new Thread(){
@@ -66,7 +98,7 @@ public class eHandbook {
 				}
 			});
 
-			Data[] mapData = Ludus.getAllData(".*maps/.*.json");
+			Data[] mapData = Ludus.getAllData(".*maps/.*\\.json");
 			for(Data map : mapData)
 				maps.add(new JsonParser().parse(map.getAsString()).getAsJsonObject());
 
@@ -226,23 +258,53 @@ public class eHandbook {
 
 				panel.setLayoutManager(new GridLayout(2));
 				try{
-					JsonObject truthBullet = loadedEvidence.get("evidence").getAsJsonObject().get(bullet).getAsJsonObject();
+					final JsonObject truthBullet = loadedEvidence.get("evidence").getAsJsonObject().get(bullet).getAsJsonObject();
 
+					String desc = "";
+					for(JsonElement json : truthBullet.get("desc").getAsJsonArray())
+						desc += json.getAsString() + "\n";
+
+					final TextBox time = new TextBox(new TerminalSize(40, 1), truthBullet.get("discovered_time").getAsString());
+					final TextBox loc = new TextBox(new TerminalSize(40, 1),truthBullet.get("discovered_location").getAsString().replace(":", ", "));
+					final TextBox person = new TextBox(new TerminalSize(40, 1),truthBullet.get("discovered_person").getAsString());
+					final TextBox description = new TextBox(new TerminalSize(40, desc.split("\n").length), desc);
+
+					panel.addComponent(new Label(bullet));
+					panel.addComponent(new EmptySpace(new TerminalSize(0, 0)));
+
+					panel.addComponent(new EmptySpace(new TerminalSize(20, 1)));
+					panel.addComponent(new EmptySpace(new TerminalSize(20, 1)));
+					
 					panel.addComponent(new Label("When it was discovered: "));
-					panel.addComponent(new Label(truthBullet.get("discovered_time").getAsString()));
+					panel.addComponent(time);
 
 					panel.addComponent(new Label("Where it was discovered: "));
-					panel.addComponent(new Label(truthBullet.get("discovered_location").getAsString().split(":")[truthBullet.get("discovered_location").getAsString().split(":").length-1]));
+					panel.addComponent(loc);
 
 					panel.addComponent(new Label("Who discovered it: "));
-					panel.addComponent(new Label(truthBullet.get("discovered_person").getAsString()));
+					panel.addComponent(person);
+
+					panel.addComponent(new Label("Description: "));
+					panel.addComponent(description);
+					
+					panel.addComponent(new Button("Save", new Runnable(){
+						public void run(){
+							truthBullet.add("discovered_time", new JsonPrimitive(time.getLine(0)));
+							truthBullet.add("discovered_location", new JsonPrimitive(loc.getLine(0).replace(", ", ":")));
+							truthBullet.add("discovered_person", new JsonPrimitive(person.getLine(0)));
+							JsonArray descArray = new JsonArray();
+							for(String line : ReflectionHelper.getObjectFromVariable(description, "lines", new ArrayList<String>()))
+								descArray.add(line);
+							truthBullet.add("desc", descArray);
+						}
+					}));
 				}
 				catch(Throwable th){
 					th.printStackTrace();
 				}
 
-				panel.addComponent(new EmptySpace(new TerminalSize(0, 0)));
 				panel.addComponent(new Button("Back", BACK_BUTTON));
+				panel.calculatePreferredSize();
 			}
 
 			window.setComponent(panel);
@@ -313,6 +375,30 @@ public class eHandbook {
 			final Panel panel = new Panel();
 			panel.setLayoutManager(new GridLayout(1));
 
+			panel.addComponent(new Button("...existing file in storage", new Runnable(){
+				public void run(){
+					Panel evidencePanel = new ScrollPanel(10);
+					evidencePanel.addComponent(new Label("Choose evidence file to load..."));
+					try {
+						for(String data : Ludus.getAllDataNames(".*evidence/.*\\.json")){
+							final String dataLoc = data.replace("/", File.separator);
+							String dataName = dataLoc.split(File.separator, 3)[2];
+							evidencePanel.addComponent(new Button(dataName, new Runnable(){
+								public void run(){
+									loadEvidence(new File(eHandbookLocation, dataLoc));
+								}
+							}));
+						}
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					evidencePanel.addComponent(new Button("Back", BACK_BUTTON));
+					Window window = new ScrollWindow();
+					window.setComponent(evidencePanel);
+					gui.addWindowAndWait(window);
+				}
+			}));
+
 			panel.addComponent(new Button("...existing file in storage folder", new Runnable(){
 				public void run(){
 					FileDialog jfc = new FileDialog("Evidence", "Choose a .json evidence file to load", "Load", panel.getSize(), false, new File(eHandbookLocation, "evidence"));
@@ -326,14 +412,14 @@ public class eHandbook {
 					loadEvidence(jfc.showDialog(gui));
 				}
 			}));
-			
+
 			panel.addComponent(new Button("...from a url", new Runnable(){
 				public void run(){
 					Panel urlPanel = new Panel();
 					urlPanel.setLayoutManager(new GridLayout(2));
-					
+
 					final TextBox url = new TextBox(new TerminalSize(30, 1));
-					
+
 					urlPanel.addComponent(new Label("URL: "));
 					urlPanel.addComponent(url);
 					urlPanel.addComponent(new Button("Back", BACK_BUTTON));
@@ -350,7 +436,7 @@ public class eHandbook {
 							catch(Throwable th){}
 						}
 					}));
-					
+
 					Window window = new BasicWindow();
 					window.setComponent(urlPanel);
 					gui.addWindowAndWait(window);
@@ -395,10 +481,18 @@ public class eHandbook {
 
 	public void loadEvidence(File file){
 		try{
-			Data data = new Data(file);
+			loadEvidence(new Data(file));
+			loadedFile = file;
+		}
+		catch(IOException e){
+			handleError(e);
+		}
+	}
+
+	public void loadEvidence(Data data){
+		try{
 			if(data != null)
 				loadedEvidence = new JsonParser().parse(data.getAsString().trim()).getAsJsonObject();
-			loadedFile = file;
 			BACK_BUTTON.run();
 			BACK_BUTTON.run();
 		}

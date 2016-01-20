@@ -1,0 +1,261 @@
+{
+  "trial": "Danganronpa: Trigger Happy Havoc, Sayaka\u0027s Trial",
+  "evidence": {
+    "Monokuma File": {
+      "discovered_time": "7:30 AM",
+      "discovered_location": "Gym 1st Floor:Gym",
+      "discovered_person": "All",
+      "desc": [
+        "The victim was Sayaka Maizono.",
+        "The time of death is estimated",
+        "to be around 1:30 a.m. The body",
+        "was discovered in Makoto\u0027s room,",
+        "in the dormitory.",
+        "The death took place in the ",
+        "bathroom. The cause of death",
+        "was a stab to the abdomen",
+        "and her right wrist ",
+        "appears to have been fractured."
+      ]
+    },
+    "Evidence of a Struggle": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "There are a number of",
+        "scratches and gouges on",
+        "the bed and walls in ",
+        "Makoto\u0027s room"
+      ]
+    },
+    "Replica Sword": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "Makoto took this from the gym",
+        "entryway and put it in his",
+        "room. The sword was found out",
+        "of its sheath on the floor in",
+        "the middle of the room",
+        "The sword handle was missing",
+        "some of the gold coating, as",
+        "was part of the blade."
+      ]
+    },
+    "Replica Sword Sheath": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "Makoto took this from the gym",
+        "entryway and put it in his",
+        "room. The sheath was found",
+        "some distance from the sword",
+        "itself, and it shows evidence",
+        "of being scratched with a",
+        "sharp object."
+      ]
+    },
+    "Switching Rooms": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "On the night of the murder,",
+        "Makoto and Sayaka traded rooms",
+        "and room keys. When the victim",
+        "was discovered, Makoto\u0027s room",
+        "key was also discovered in Makoto\u0027s",
+        "room.",
+        "Sayaka had originally asked",
+        "Makoto to switch with her when",
+        "someone attempted to force",
+        "their way into her room, and",
+        "she became frightened."
+      ]
+    },
+    "Toolkit": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "This had been placed in",
+        "Makoto\u0027s room before he",
+        "arrived. It remains unopened,",
+        "and there is no evidence of it",
+        "having ever been used.",
+        "All the other male students",
+        "claim that they haven\u0027t used",
+        "theirs, either. But still..."
+      ]
+    },
+    "Makoto\u0027s Room\u0027s Cleanliness": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "Not a single hair was found on",
+        "the floor at the scene of the",
+        "crime. In addition, the lint",
+        "roller shows evidence of being",
+        "used."
+      ]
+    },
+    "Sayaka\u0027s Wrist": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "Sayaka\u0027s right wrist had been",
+        "fractured, and her wrist was",
+        "\"glittery\" at the injury\u0027s",
+        "location.",
+        "In addition, her hands",
+        "appeared to be completely",
+        "clean, except for the index",
+        "finger of her left hand, which",
+        "had some blood on it."
+      ]
+    },
+    "Dying Message": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "A series of numbers had been",
+        "written in blood on Makoto\u0027s",
+        "bathroom wall - 11037.",
+        "It is assumed that Sayaka",
+        "wrote these numbers while",
+        "leaned up against the wall,",
+        "as she lay dying."
+      ]
+    },
+    "Bathroom Doorframe": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "Makoto\u0027s bathroom door was",
+        "difficult to open, due to it",
+        "not quite fitting in the",
+        "doorframe properly.",
+        "The only two people who knew",
+        "the trick to opening it were",
+        "Makoto, the room\u0027s owner,",
+        "and Sayaka, the victim."
+      ]
+    },
+    "Bathroom Doorknob": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Makoto\u0027s Room",
+      "discovered_person": "All",
+      "desc": [
+        "Makoto\u0027s bathroom doorknob had",
+        "been broken - the screws holding",
+        "it in place had all been",
+        "partially or completely",
+        "removed."
+      ]
+    },
+    "Dorm Nameplates": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Hallway 1F",
+      "discovered_person": "All",
+      "desc": [
+        "The nameplates on the doors to",
+        "Sayaka and Makoto\u0027s rooms were",
+        "apparently switched at some",
+        "point."
+      ]
+    },
+    "Kitchen Knife Set": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Kitchen",
+      "discovered_person": "All",
+      "desc": [
+        "The kitchen in the dining hall",
+        "has a set of kitchen knives.",
+        "Apparently one of the knives had gone missing."
+      ]
+    },
+    "Aoi\u0027s Account": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Dining Hall",
+      "discovered_person": "All",
+      "desc": [
+        "The knife from the kitchen",
+        "went missing while Aoi was in",
+        "the dining hall.",
+        "",
+        "Aoi swears that Makoto did not",
+        "come to the dining hall at any",
+        "point while she was there."
+      ]
+    },
+    "Trash Duty": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Trash Room",
+      "discovered_person": "All",
+      "desc": [
+        "There\u0027s apparently a trash",
+        "room within the school. It\u0027s",
+        "blocked off by a sturdy gate",
+        "that can only be opened with",
+        "the trash room key."
+      ]
+    },
+    "Incinerator": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Trash Room",
+      "discovered_person": "All",
+      "desc": [
+        "The incinerator can be",
+        "activated via a switch on the",
+        "machine. Hifumi was on",
+        "cleaning duty, and he claims",
+        "that the last time he saw the",
+        "incinerator, it was off.",
+        "However, when Makoto checked",
+        "it after the incident, the",
+        "incinerator was, in fact, on.",
+        "The distance from the gate to",
+        "the incinerator is roughly",
+        "thirty feet."
+      ]
+    },
+    "Burnt Shirt Piece": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Trash Room",
+      "discovered_person": "All",
+      "desc": [
+        "A piece of burnt clothing was",
+        "found next to the incinerator",
+        "in the trash room.",
+        "It is apparently part of a",
+        "shirt cuff, and it has a",
+        "noticeable bloodstain on it."
+      ]
+    },
+    "Shattered Crystal Ball": {
+      "discovered_time": "Before the trial",
+      "discovered_location": "Dormitory 1st Floor:Trash Room",
+      "discovered_person": "All",
+      "desc": [
+        "Shards of glass were found",
+        "next to the incinerator in",
+        "the trash room.",
+        "As it turns out, the glass",
+        "ball would have fit",
+        "comfortably in the palm",
+        "of a person\u0027s hand.",
+        "Apparently, Yasuhiro left the",
+        "ball in the laundry room by",
+        "accident, so anyone could have",
+        "come along and taken it."
+      ]
+    }
+  }
+}
