@@ -1,175 +1,234 @@
 {
-	"name":"Hope's Peak Academy",
-	"sections":{
-		"Dormitory 1st Floor":{
-			"locations":{
-				"Hallway 1F":{
-					"exits":[
-						"Dining Hall", "Kitchen", "Warehouse",
-						"Kyoko's Room", "Makoto's Room", "Sayaka's Room",
-						"Toko's Room", "Chihiro's Room", "Aoi's Room",
-						"Sakura's Room", "Leon's Room", "Yasuhiro's Room",
-						"Hifumi's Room", "Kiyotaka's Room", "Mondo's Room",
-						"Byakuya's Room", "Junko's Room", "Celeste's Room",
-						"Trash Room", "Boy's Bathroom", "Girl's Bathroom",
-						"Laundry", "Dressing Room", "Bathhouse", "Sauna",
-						
-						"Hope's Peak 1st Floor"
-					]
-				},
-				"Dining Hall":{
-					"exits":["Kitchen", "Hallway 1F"]
-				},
-				"Kitchen":{
-					"exits":["Dining Hall"]
-				},
-				"Warehouse":{
-					"unlocked":"CHAPTER_2",
-					"exits":["Hallway 1F"]
-				},
-				"Kyoko's Room":{
-					"exits":["Hallway 1F"]		
-				},
-				"Makoto's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Sayaka's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Toko's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Chihiro's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Aoi's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Sakura's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Leon's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Yasuhiro's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Hifumi's Room":{
-					"exits":["Hallway 1F"]				
-				},
-				"Trash Room":{
-					"exits":["Hallway 1F"]	
-				},
-				"Boy's Bathroom":{
-					"exits":["Hallway 1F"]	
-				},
-				"Girl's Bathroom":{
-					"exits":["Hallway 1F"]	
-				},
-				"Laundry":{
-					"exits":["Hallway 1F"]	
-				},
-				"Dressing Room":{
-					"unlocked":"CHAPTER_2",
-					"exits":["Hallway 1F", "Bathhouse"]
-				},
-				"Bathhouse":{
-					"unlocked":"CHAPTER_2",
-					"exits":["Dressing Room", "Sauna"]
-				},
-				"Sauna":{
-					"unlocked":"CHAPTER_2",
-					"exits":["Bathhouse"]
-				},
-				"Kiyotaka's Room":{
-					"exits":"Hallway 1F"				
-				},
-				"Mondo's Room":{
-					"exits":"Hallway 1F"				
-				},
-				"Byakuya's Room":{
-					"exits":"Hallway 1F"				
-				},
-				"Junko's Room":{
-					"exits":"Hallway 1F"				
-				},
-				"Celeste's Room":{
-					"exits":"Hallway 1F"				
-				}
-			}
-		},
-		"Hope's Peak 1st Floor":{
-			"locations":{
-				"Hallway 1F":{
-					"exits":[
-						"Dormitory 1st Floor:Hallway 1F"
-					]
-				},
-				"Girls Bathroom":{},
-				"Boys Bathroom":{},
-				"Nurse's Office":{},
-				"Main Hall":{},
-				"School Store":{},
-				"A/V Room":{},
-				"Class 1-A":{},
-				"Class 1-B":{}
-			}
-		},
-		"Gym 1st Floor":{
-			"locations":{
-				"Gym Entryway":{},
-				"Gym":{}
-			}
-		},
-		"Hope's Peak 2nd Floor":{
-			"locations":{
-				"Hallway 2F":{},
-				"Library":{},
-				"Archives":{},
-				"Class 2-A":{},
-				"Class 2-B":{},
-				"Boy's Bathroom":{},
-				"Girl's Bathroom":{},
-				"Boy's Changing Room":{},
-				"Girl's Changing Room":{},
-				"Pool":{},
-				"Secret Room":{}
-			}
-		},
-		"Hope's Peak 3rd Floor":{
-			"locations":{
-				"Class 3-A":{},
-				"Class 3-B":{},
-				"Recreational Room":{},
-				"Art Room":{},
-				"Art Storage Room":{},
-				"Physics Lab":{},
-				"Physics Storage Room":{}
-			}
-		},
-		"Hope's Peak 4th Floor":{
-			"locations":{
-				"Boy's Bathroom":{},
-				"Girl's Bathroom":{},
-				"Music Room":{},
-				"Principal's Office":{},
-				"Staff Room":{},
-				"Data Processing Room":{},
-				"Monokuma Control Panel":{},
-				"Class 4-A":{},
-				"Class 4-B":{},
-				"Chemistry Lab":{}
-			}
-		},
-		"Hope's Peak 5th Floor":{
-			"locations":{
-				"Biology Lab":{},
-				"Class 5-A":{},
-				"Class 5-B":{},
-				"Class 5-C":{},
-				"Dojo":{},
-				"Greenhouse":{}
-			}
-		}
-	}
+    "name": "Hope's Peak Academy",
+    "sections": {
+        "Dormitory 1st Floor": {
+            "locations": {
+                "Hallway 1F": {
+                    "exits": [
+                        "Dining Hall",
+                        "Kitchen",
+                        "Warehouse",
+                        "Kyoko's Room",
+                        "Makoto's Room",
+                        "Sayaka's Room",
+                        "Toko's Room",
+                        "Chihiro's Room",
+                        "Aoi's Room",
+                        "Sakura's Room",
+                        "Leon's Room",
+                        "Yasuhiro's Room",
+                        "Hifumi's Room",
+                        "Kiyotaka's Room",
+                        "Mondo's Room",
+                        "Byakuya's Room",
+                        "Junko's Room",
+                        "Celeste's Room",
+                        "Trash Room",
+                        "Boy's Bathroom",
+                        "Girl's Bathroom",
+                        "Laundry",
+                        "Dressing Room",
+                        "Bathhouse",
+                        "Sauna",
+                        "Hope's Peak 1st Floor"
+                    ]
+                },
+                "Dining Hall": {
+                    "exits": [
+                        "Kitchen",
+                        "Hallway 1F"
+                    ]
+                },
+                "Kitchen": {
+                    "exits": [
+                        "Dining Hall"
+                    ]
+                },
+                "Warehouse": {
+                    "unlocked": "CHAPTER_2",
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Kyoko's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Makoto's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Sayaka's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Toko's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Chihiro's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Aoi's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Sakura's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Leon's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Yasuhiro's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Hifumi's Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Trash Room": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Boy's Bathroom": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Girl's Bathroom": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Laundry": {
+                    "exits": [
+                        "Hallway 1F"
+                    ]
+                },
+                "Dressing Room": {
+                    "unlocked": "CHAPTER_2",
+                    "exits": [
+                        "Hallway 1F",
+                        "Bathhouse"
+                    ]
+                },
+                "Bathhouse": {
+                    "unlocked": "CHAPTER_2",
+                    "exits": [
+                        "Dressing Room",
+                        "Sauna"
+                    ]
+                },
+                "Sauna": {
+                    "unlocked": "CHAPTER_2",
+                    "exits": [
+                        "Bathhouse"
+                    ]
+                },
+                "Kiyotaka's Room": {
+                    "exits": "Hallway 1F"
+                },
+                "Mondo's Room": {
+                    "exits": "Hallway 1F"
+                },
+                "Byakuya's Room": {
+                    "exits": "Hallway 1F"
+                },
+                "Junko's Room": {
+                    "exits": "Hallway 1F"
+                },
+                "Celeste's Room": {
+                    "exits": "Hallway 1F"
+                }
+            }
+        },
+        "Hope's Peak 1st Floor": {
+            "locations": {
+                "Hallway 1F": {
+                    "exits": [
+                        "Dormitory 1st Floor:Hallway 1F"
+                    ]
+                },
+                "Girls Bathroom": {},
+                "Boys Bathroom": {},
+                "Nurse's Office": {},
+                "Main Hall": {},
+                "School Store": {},
+                "A/V Room": {},
+                "Class 1-A": {},
+                "Class 1-B": {}
+            }
+        },
+        "Gym 1st Floor": {
+            "locations": {
+                "Gym Entryway": {},
+                "Gym": {}
+            }
+        },
+        "Hope's Peak 2nd Floor": {
+            "locations": {
+                "Hallway 2F": {},
+                "Library": {},
+                "Archives": {},
+                "Class 2-A": {},
+                "Class 2-B": {},
+                "Boy's Bathroom": {},
+                "Girl's Bathroom": {},
+                "Boy's Changing Room": {},
+                "Girl's Changing Room": {},
+                "Pool": {},
+                "Secret Room": {}
+            }
+        },
+        "Hope's Peak 3rd Floor": {
+            "locations": {
+                "Class 3-A": {},
+                "Class 3-B": {},
+                "Recreational Room": {},
+                "Art Room": {},
+                "Art Storage Room": {},
+                "Physics Lab": {},
+                "Physics Storage Room": {}
+            }
+        },
+        "Hope's Peak 4th Floor": {
+            "locations": {
+                "Boy's Bathroom": {},
+                "Girl's Bathroom": {},
+                "Music Room": {},
+                "Principal's Office": {},
+                "Staff Room": {},
+                "Data Processing Room": {},
+                "Monokuma Control Panel": {},
+                "Class 4-A": {},
+                "Class 4-B": {},
+                "Chemistry Lab": {}
+            }
+        },
+        "Hope's Peak 5th Floor": {
+            "locations": {
+                "Biology Lab": {},
+                "Class 5-A": {},
+                "Class 5-B": {},
+                "Class 5-C": {},
+                "Dojo": {},
+                "Greenhouse": {}
+            }
+        }
+    }
 }
