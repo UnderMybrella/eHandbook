@@ -67,7 +67,7 @@ public class eHandbook {
 					if(remoteFile.exists())
 						continue;
 					remoteFile.createNewFile();
-					Ludus.getData(fileName).write(remoteFile);
+					new Data(Ludus.getData(fileName).getAsString().trim()).write(remoteFile);
 				}
 				catch(Throwable th){
 					th.printStackTrace();
@@ -80,7 +80,7 @@ public class eHandbook {
 					if(remoteFile.exists())
 						continue;
 					remoteFile.createNewFile();
-					Ludus.getData(fileName).write(remoteFile);
+					new Data(Ludus.getData(fileName).getAsString().trim()).write(remoteFile);
 				}
 				catch(Throwable th){
 					th.printStackTrace();
