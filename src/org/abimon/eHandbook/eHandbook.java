@@ -349,7 +349,7 @@ public class eHandbook {
 				public void run(){
 					JsonObject truthBullet = new JsonObject();
 					truthBullet.add("discovered_time", new JsonPrimitive(time.getText()));
-					truthBullet.add("discovered_location", new JsonPrimitive(location.getText()));
+					truthBullet.add("discovered_location", new JsonPrimitive(location.getText().replace(", ", ":")));
 					truthBullet.add("discovered_person", new JsonPrimitive(person.getText()));
 
 					JsonArray description = new JsonArray();
