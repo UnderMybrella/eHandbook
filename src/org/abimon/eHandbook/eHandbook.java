@@ -98,7 +98,7 @@ public class eHandbook {
 				}
 			});
 
-			Data[] mapData = Ludus.getAllData(".*maps/.*\\.json");
+			Data[] mapData = Ludus.getAllData(".*maps" + File.separator + ".*\\.json");
 			for(Data map : mapData){
 				System.out.println("Loading " + map + "...");
 				maps.add(new JsonParser().parse(map.getAsString()).getAsJsonObject());
@@ -382,12 +382,11 @@ public class eHandbook {
 					Panel evidencePanel = new ScrollPanel(10);
 					evidencePanel.addComponent(new Label("Choose evidence file to load..."));
 					try {
-						for(String data : Ludus.getAllDataNames(".*evidence/.*\\.json")){
-							final String dataLoc = data.replace("/", File.separator);
-							String dataName = dataLoc.split(File.separator, 3)[2];
+						for(final String data : Ludus.getAllDataNames(".*evidence" + File.separator + ".*\\.json")){
+							String dataName = data.split(File.separator, 3)[2];
 							evidencePanel.addComponent(new Button(dataName, new Runnable(){
 								public void run(){
-									loadEvidence(new File(eHandbookLocation, dataLoc));
+									loadEvidence(new File(eHandbookLocation, data));
 								}
 							}));
 						}
