@@ -99,8 +99,10 @@ public class eHandbook {
 			});
 
 			Data[] mapData = Ludus.getAllData(".*maps/.*\\.json");
-			for(Data map : mapData)
+			for(Data map : mapData){
+				System.out.println("Loading " + map + "...");
 				maps.add(new JsonParser().parse(map.getAsString()).getAsJsonObject());
+			}
 
 			DefaultTerminalFactory factory = new DefaultTerminalFactory();
 			factory.setSwingTerminalFrameTitle("eHandbook - " + System.getProperty("user.name"));
@@ -274,7 +276,7 @@ public class eHandbook {
 
 					panel.addComponent(new EmptySpace(new TerminalSize(20, 1)));
 					panel.addComponent(new EmptySpace(new TerminalSize(20, 1)));
-					
+
 					panel.addComponent(new Label("When it was discovered: "));
 					panel.addComponent(time);
 
@@ -286,7 +288,7 @@ public class eHandbook {
 
 					panel.addComponent(new Label("Description: "));
 					panel.addComponent(description);
-					
+
 					panel.addComponent(new Button("Save", new Runnable(){
 						public void run(){
 							truthBullet.add("discovered_time", new JsonPrimitive(time.getLine(0)));
@@ -513,6 +515,17 @@ public class eHandbook {
 					}
 				}));
 
+			panel.addComponent(new Button("Load", new Runnable(){
+				public void run(){
+					try{
+						FileDialog jfc = new FileDialog("Maps", "Choose a map file to load", "Load", new TerminalSize(50, 5), false, eHandbookLocation);
+						File savingLocation = jfc.showDialog(gui);
+						if(savingLocation == null)
+							return;
+						maps.add(new JsonParser().parse(new Data(savingLocation).getAsString()).getAsJsonObject());
+					}catch(Throwable th){}
+				}
+			}));
 			panel.addComponent(new Button("Back", BACK_BUTTON));
 
 			Window window = new BasicWindow();
